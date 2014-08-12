@@ -66,7 +66,6 @@ produce_tidy_data <- function(x, subject, activities, features) {
         library(data.table)
         dt <- data.table(x);
         dt <- dt[,lapply(.SD, mean), by=list(activities, subject)]
-        print(dim(dt))
-        write.table(dt, row.name =FALSE, file="answer.txt")
+        write.table(dt, row.name = FALSE, file="answer.txt")
         
 }
